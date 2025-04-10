@@ -1,4 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://caxy8whsb71ji"]
+[gd_scene load_steps=5 format=3 uid="uid://caxy8whsb71ji"]
+
+[ext_resource type="PackedScene" uid="uid://popi63ibpd5b" path="res://objects/caixa.tscn" id="1_wtcfe"]
+[ext_resource type="PackedScene" uid="uid://cuwbo8idfovsc" path="res://objects/caixa que pula.tscn" id="2_0e48y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y32ns"]
 size = Vector2(66, 66)
@@ -156,6 +159,7 @@ offset_bottom = 32.0
 metadata/_edit_use_anchors_ = true
 
 [node name="RigidBody2D2" type="RigidBody2D" parent="."]
+position = Vector2(-3, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D2"]
 position = Vector2(550, 54)
@@ -167,6 +171,9 @@ offset_top = -32.0
 offset_right = 32.0
 offset_bottom = 32.0
 metadata/_edit_use_anchors_ = true
+
+[node name="RigidBody2D12" parent="." instance=ExtResource("1_wtcfe")]
+position = Vector2(-126, 280)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
@@ -180,3 +187,9 @@ offset_top = -20.0
 offset_right = 577.0
 offset_bottom = 20.0
 color = Color(0.28609, 0.595871, 0.262904, 1)
+
+[node name="RigidBody2D13" parent="." instance=ExtResource("2_0e48y")]
+position = Vector2(509, 171)
+
+[node name="RigidBody2D14" parent="." instance=ExtResource("2_0e48y")]
+position = Vector2(426, 385)
