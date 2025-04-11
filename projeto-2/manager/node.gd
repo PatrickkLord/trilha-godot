@@ -1,5 +1,7 @@
 extends Node2D
 
+@export var object_templantes: Array[PackedScene]
+
 #func _ready() -> void:
 	#pass
 	#
@@ -11,11 +13,15 @@ func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		if event.button_index ==1:
 			if event.pressed:
-				spaw_object	()
+				spaw_object	(event.position)
 					
 			
-		
-func spaw_object(event.position: vector2)-> void:
+func spaw_object(position: Vector2) -> void:
+	var index: int = randi_range(0, object_templantes.size() -1)
+	var object_templante = object_templantes[index]
+	var object: RigidBody2D = object_templante.instantiate()
+	object.position = position
+	add_child(object)
 	
 	pass
 			

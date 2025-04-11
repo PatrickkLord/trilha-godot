@@ -1,22 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://cuwbo8idfovsc"]
+[gd_scene load_steps=2 format=3 uid="uid://cuwbo8idfovsc"]
 
 [ext_resource type="PackedScene" uid="uid://popi63ibpd5b" path="res://objects/caixa.tscn" id="1_tcp7x"]
 
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ff5a0"]
-
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_mmg73"]
-
-[node name="RigidBody2D12" instance=ExtResource("1_tcp7x")]
-position = Vector2(382, 54)
-mass = 1000.0
-physics_material_override = SubResource("PhysicsMaterial_ff5a0")
-
-[node name="RigidBody2D15" parent="." index="1" instance=ExtResource("1_tcp7x")]
-position = Vector2(-50, 155)
-mass = 1000.0
-physics_material_override = SubResource("PhysicsMaterial_mmg73")
-gravity_scale = -3.901
-
-[node name="RigidBody2D16" parent="." index="2" instance=ExtResource("1_tcp7x")]
-position = Vector2(-253, 108)
-mass = 829.881
+[node name="RigidBody2D15" instance=ExtResource("1_tcp7x")]
+position = Vector2(-221, 28)
