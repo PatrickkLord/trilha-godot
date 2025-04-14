@@ -22,7 +22,7 @@ color = Color(0.431373, 0.921569, 0.929412, 1)
 
 [node name="Node" type="Node2D" parent="."]
 script = ExtResource("1_epypp")
-object_templantes = Array[PackedScene]([ExtResource("2_0e48y"), ExtResource("1_wtcfe")])
+object_templantes = Array[PackedScene]([ExtResource("1_wtcfe"), ExtResource("2_0e48y")])
 
 [node name="RigidBody2D" type="RigidBody2D" parent="."]
 position = Vector2(174, 13)
@@ -123,7 +123,7 @@ offset_bottom = 20.0
 color = Color(0.28609, 0.595871, 0.262904, 1)
 
 [node name="RigidBody2D15" parent="." instance=ExtResource("2_0e48y")]
-position = Vector2(214, 148)
+position = Vector2(-442, 77)
 
 [node name="RigidBody2D16" parent="." instance=ExtResource("2_0e48y")]
-position = Vector2(251, 339)
+position = Vector2(-422, 247)
