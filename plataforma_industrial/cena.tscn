@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://b28g0ow8wwhhm"]
+[gd_scene load_steps=5 format=3 uid="uid://b28g0ow8wwhhm"]
 
 [ext_resource type="TileSet" uid="uid://btgst52a7vrq7" path="res://tileSet.tres" id="1_2vsai"]
-[ext_resource type="Texture2D" uid="uid://d1dbnvepx4ff4" path="res://PNG/laserGreen2.png" id="2_828d7"]
-[ext_resource type="Texture2D" uid="uid://cbfmg84enj8e" path="res://PNG/laserGreen3.png" id="3_wjoo6"]
-[ext_resource type="Texture2D" uid="uid://clascaitip78x" path="res://PNG/shipGreen_manned.png" id="4_w1627"]
-[ext_resource type="Texture2D" uid="uid://bts136306rcct" path="res://PNG/laserGreen_burst.png" id="5_yan1i"]
+[ext_resource type="Script" uid="uid://rswu6wo3sec1" path="res://Assets/Alien.gd" id="2_mxkdn"]
+[ext_resource type="Texture2D" uid="uid://hcamlmlrbgk1" path="res://Assets/kenney_alien-ufo-pack/PNG/shipBlue_manned.png" id="3_c3sxu"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_828d7"]
+radius = 81.8413
 
 [node name="Node2D" type="Node2D"]
 
@@ -13,22 +14,13 @@ tile_set = ExtResource("1_2vsai")
 format = 2
 layer_0/tile_data = PackedInt32Array(393218, 327680, 3, 458754, 262144, 4, 327683, 458752, 2, 393219, 458752, 3, 458755, 0, 0, 524291, 262144, 1, 327684, 524288, 2, 393220, 851968, 4, 458756, 0, 0, 524292, 262144, 1, 524293, 262144, 1, 327680, 458752, 2, 458752, 131072, 4, 327681, 458752, 2, 458753, 196608, 4, 327682, 327680, 3, 262147, 458752, 1, 262148, 524288, 1, 262149, 589824, 2, 458757, 0, 0, 262150, 589824, 2, 458758, 720896, 4, 262151, 589824, 2, 458759, 720896, 4, 262152, 589824, 2, 458760, 786432, 4, 262153, 589824, 2, 262154, 589824, 2, 262155, 589824, 2, 262156, 589824, 2, 262157, 589824, 2, 262158, 589824, 2, 262159, 589824, 2, 524294, 589824, 4, 524295, 589824, 4, 524296, 589824, 4, 524297, 589824, 4, 196613, 589824, 3, 196614, 589824, 3, 196615, 65536, 2, 196616, 65536, 2, 196617, 65536, 2, 327686, 655360, 6, 327687, 589824, 6, 327688, 589824, 6, 327689, 589824, 6, 327690, 589824, 6, 327691, 589824, 6, 327692, 589824, 6, 327693, 589824, 6, 327694, 589824, 6, 327695, 589824, 6, 393231, 589824, 6, 393230, 589824, 6, 393229, 589824, 6, 393228, 589824, 6, 393227, 589824, 6, 393226, 589824, 6, 393225, 589824, 6, 393224, 589824, 6, 393223, 589824, 6, 393217, 851968, 5, 524298, 65536, 4, 524299, 65536, 4, 524300, 65536, 4, 524301, 65536, 4, 524302, 65536, 4, 524303, 65536, 4, 524304, 65536, 4, 393221, 655360, 3, 393216, 655360, 3, 327685, 655360, 5, 393222, 655360, 6, 196609, 720896, 5, 0, 458752, 3, 1, 458752, 3, 2, 458752, 3, 3, 458752, 3, 4, 458752, 3, 5, 458752, 3, 6, 458752, 3, 7, 458752, 3, 8, 458752, 3, 9, 458752, 3, 10, 458752, 3, 11, 458752, 3, 12, 458752, 3, 13, 458752, 3, 14, 458752, 3, 15, 458752, 3, 16, 458752, 3, 65543, 131072, 5, 65544, 196608, 5, 65545, 262144, 5, 458764, 131072, 3, 458763, 131072, 3, 458762, 131072, 3, 458765, 131072, 3, 458766, 131072, 3, 458767, 131072, 3, 458768, 131072, 3, 131080, 0, 6, 196618, 720896, 4, 196619, 786432, 4, 196620, 0, 5, 196621, 0, 5, 196622, 0, 5, 196623, 0, 5, 196624, 0, 5, 131076, 851968, 4)
 
-[node name="LaserGreen2" type="Sprite2D" parent="."]
-position = Vector2(131, 197)
-rotation = 1.9388
-scale = Vector2(0.268496, 1.30702)
-texture = ExtResource("2_828d7")
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("2_mxkdn")
 
-[node name="LaserGreen3" type="Sprite2D" parent="."]
-position = Vector2(43, 172)
-texture = ExtResource("3_wjoo6")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(104, 124)
+shape = SubResource("CircleShape2D_828d7")
 
-[node name="ShipGreenManned" type="Sprite2D" parent="."]
-position = Vector2(45, 149.75)
-scale = Vector2(0.467742, 0.53252)
-texture = ExtResource("4_w1627")
-
-[node name="LaserGreenBurst" type="Sprite2D" parent="."]
-position = Vector2(192, 221)
-scale = Vector2(0.159574, 0.12766)
-texture = ExtResource("5_yan1i")
+[node name="ShipBlueManned" type="Sprite2D" parent="CharacterBody2D"]
+position = Vector2(106, 133)
+texture = ExtResource("3_c3sxu")
