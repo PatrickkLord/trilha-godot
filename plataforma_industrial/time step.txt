@@ -1,0 +1,11 @@
+dimesoes sky
+1920x1080
+
+dimensoes da tela
+1152 x 648
+
+dimensões de tela / dimensões sky
+x = 1152/1920 = 0.6
+y = 648/1080 = 0.6
+
+ParallaxBackground > transform >Scale x e y
