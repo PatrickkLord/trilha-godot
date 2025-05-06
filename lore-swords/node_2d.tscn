@@ -12,3 +12,5 @@ position = Vector2(229, 144)
 position = Vector2(1488, 279)
 scale = Vector2(0.46875, 0.468099)
 texture = ExtResource("1_wtcfe")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]

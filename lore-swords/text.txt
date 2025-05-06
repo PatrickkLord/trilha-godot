@@ -1,0 +1,8 @@
+criar um charactere body 2d
+definir um novo pai
+resetar o position scale
+adicionmar a oriens no pes alterando a posicao do sprite
+diminuir a trasparencia do collision shape
+renomear para player
+
+criar uma nova pasta player e add uma cena
