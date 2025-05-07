@@ -6,7 +6,7 @@
 [node name="Node2D" type="Node2D"]
 
 [node name="player" parent="." instance=ExtResource("1_0e48y")]
-position = Vector2(229, 144)
+position = Vector2(271, 315)
 
 [node name="exemplo" type="Sprite2D" parent="."]
 position = Vector2(1488, 279)
