@@ -1,5 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://dweoy2yjjeku3"]
+[gd_scene load_steps=11 format=3 uid="uid://dweoy2yjjeku3"]
 
+[ext_resource type="Script" uid="uid://cj74nj8bjsolu" path="res://enemies/Follow.gd" id="1_3ei1y"]
 [ext_resource type="Texture2D" uid="uid://fmvx1ve21i7y" path="res://addons/Tiny Swords/Factions/Knights/Troops/Pawn/Red/Pawn_Red.png" id="1_13x4r"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3ei1y"]
@@ -59,6 +60,7 @@ animations = [{
 [node name="Pawns" type="CharacterBody2D"]
 position = Vector2(70, 48)
 motion_mode = 1
+script = ExtResource("1_3ei1y")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-2, 2)
