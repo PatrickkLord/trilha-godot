@@ -6,6 +6,7 @@
 script/source = "extends CharacterBody2D
 
 @export var speed: float = 3
+@export var suwod_damage: int = 2
 
 @onready var sprite: Sprite2D = $sprite
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
@@ -107,6 +108,13 @@ func attack() -> void:
 	is_attacking = true	
 			
 			
+#gerar dano
+func deal_damage_to_anemies() -> void:
+	#acessar os inimigos
+	
+	#chamar a função damage com suword_damage
+	
+		pass
 "
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_oul6g"]
