@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bk5iubnkk3a20" path="res://enemies/enemy.gd" id="1_3ei1y"]
 [ext_resource type="Texture2D" uid="uid://fmvx1ve21i7y" path="res://addons/Tiny Swords/Factions/Knights/Troops/Pawn/Red/Pawn_Red.png" id="1_13x4r"]
-[ext_resource type="Script" uid="uid://cj74nj8bjsolu" path="res://enemies/Follow.gd" id="3_ex7vm"]
+[ext_resource type="Script" uid="uid://cj74nj8bjsolu" path="res://enemies/behaviors/Follow.gd" id="3_ex7vm"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3ei1y"]
 radius = 17.0
@@ -58,7 +58,7 @@ animations = [{
 "speed": 10.0
 }]
 
-[node name="Pawns" type="CharacterBody2D"]
+[node name="Pawns" type="CharacterBody2D" groups=["enemyes"]]
 position = Vector2(70, 48)
 motion_mode = 1
 script = ExtResource("1_3ei1y")
