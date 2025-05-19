@@ -1,25 +1,20 @@
-[gd_scene load_steps=4 format=3 uid="uid://duy0wsbhojx6o"]
+[gd_scene load_steps=3 format=3 uid="uid://duy0wsbhojx6o"]
 
 [ext_resource type="PackedScene" uid="uid://dv35555e6bb12" path="res://player/player.tscn" id="1_0e48y"]
-[ext_resource type="Texture2D" uid="uid://fmvx1ve21i7y" path="res://addons/Tiny Swords/Factions/Knights/Troops/Pawn/Red/Pawn_Red.png" id="2_0e48y"]
-[ext_resource type="PackedScene" uid="uid://dweoy2yjjeku3" path="res://enemies/pawns.tscn" id="3_epypp"]
+[ext_resource type="PackedScene" uid="uid://tq5jxap46edg" path="res://enemies/pawns.tscn" id="2_0e48y"]
 
 [node name="Node2D" type="Node2D"]
 
 [node name="player" parent="." instance=ExtResource("1_0e48y")]
 
-[node name="PawnRed2" type="Sprite2D" parent="."]
-position = Vector2(1204, 379)
-texture = ExtResource("2_0e48y")
+[node name="Pawns" parent="." instance=ExtResource("2_0e48y")]
+position = Vector2(706, 537)
 
-[node name="Pawns" parent="." instance=ExtResource("3_epypp")]
-position = Vector2(115, 258)
+[node name="Pawns2" parent="." instance=ExtResource("2_0e48y")]
+position = Vector2(976, 303)
 
-[node name="Pawns2" parent="." instance=ExtResource("3_epypp")]
-position = Vector2(296, 221)
+[node name="Pawns3" parent="." instance=ExtResource("2_0e48y")]
+position = Vector2(901, 486)
 
-[node name="Pawns3" parent="." instance=ExtResource("3_epypp")]
-position = Vector2(295, 371)
-
-[node name="Pawns4" parent="." instance=ExtResource("3_epypp")]
-position = Vector2(480, 117)
+[node name="Pawns4" parent="." instance=ExtResource("2_0e48y")]
+position = Vector2(1011, 568)

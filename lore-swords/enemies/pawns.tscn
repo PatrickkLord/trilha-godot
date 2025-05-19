@@ -1,12 +1,12 @@
-[gd_scene load_steps=12 format=3 uid="uid://dweoy2yjjeku3"]
+[gd_scene load_steps=12 format=3 uid="uid://tq5jxap46edg"]
 
-[ext_resource type="Script" uid="uid://bk5iubnkk3a20" path="res://enemies/enemy.gd" id="1_3ei1y"]
+[ext_resource type="Script" uid="uid://bxwdxw43eov6c" path="res://enemies/enemy.gd" id="1_3ei1y"]
 [ext_resource type="Texture2D" uid="uid://fmvx1ve21i7y" path="res://addons/Tiny Swords/Factions/Knights/Troops/Pawn/Red/Pawn_Red.png" id="1_13x4r"]
-[ext_resource type="Script" uid="uid://cj74nj8bjsolu" path="res://enemies/behaviors/Follow.gd" id="3_ex7vm"]
+[ext_resource type="Script" uid="uid://jdtpfpdne5vk" path="res://enemies/behavior/follow.gd" id="3_ex7vm"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3ei1y"]
 radius = 17.0
-height = 52.0
+height = 50.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ex7vm"]
 atlas = ExtResource("1_13x4r")
@@ -59,19 +59,18 @@ animations = [{
 }]
 
 [node name="Pawns" type="CharacterBody2D" groups=["enemyes"]]
-position = Vector2(70, 48)
 motion_mode = 1
 script = ExtResource("1_3ei1y")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-2, 2)
+position = Vector2(0, 3)
 shape = SubResource("CapsuleShape2D_3ei1y")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-1, 3)
+position = Vector2(1, 3)
 sprite_frames = SubResource("SpriteFrames_gokgo")
 autoplay = "default"
-frame_progress = 0.606141
+frame_progress = 0.0666513
 
-[node name="Follow" type="Node" parent="."]
+[node name="follow" type="Node" parent="."]
 script = ExtResource("3_ex7vm")
