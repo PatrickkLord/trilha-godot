@@ -62,6 +62,7 @@ animations = [{
 [node name="Pawns" type="CharacterBody2D" groups=["enemyes"]]
 motion_mode = 1
 script = ExtResource("1_3ei1y")
+health = 6
 death_prefab = ExtResource("2_oixp8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

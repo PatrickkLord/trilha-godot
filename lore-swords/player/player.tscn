@@ -1,22 +1,28 @@
-[gd_scene load_steps=16 format=3 uid="uid://dv35555e6bb12"]
+[gd_scene load_steps=18 format=3 uid="uid://dv35555e6bb12"]
 
 [ext_resource type="Texture2D" uid="uid://c4jrqj3mppc31" path="res://addons/Tiny Swords/Factions/Knights/Troops/Warrior/Purple/Warrior_Purple.png" id="1_liy72"]
+[ext_resource type="PackedScene" uid="uid://d08o35r1y6cn5" path="res://misc/big_sckull.tscn" id="1_rkbax"]
 
 [sub_resource type="GDScript" id="GDScript_oul6g"]
 script/source = "extends CharacterBody2D
 
 @export var speed: float = 3
 @export var suword_damage: int = 2
+@export var health: int = 100
+@export var death_prefab: PackedScene
 
 @onready var sprite: Sprite2D = $sprite
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var sword_area: Area2D = $Sword_Area
+@onready var hitbox_area: Area2D = $HitboxArea
+
  
 var input_vector: Vector2 = Vector2(0,0)
 var is_running: bool = false 
 var was_running: bool = false 
 var is_attacking: bool = false
 var attack_cooldown: float = 0.0
+var hitbox_cooldown:float =0.0
 
 func _process(delta: float)-> void:
 	GameManager.player_position = position
@@ -33,6 +39,10 @@ func _process(delta: float)-> void:
 	play_run_idle_animation()
 	if not is_attacking:
 		rotate_sprite()	
+		
+		#processa dano
+	update_hitbox_detection(delta)
+	
 		
 func _physics_process(delta: float) -> void:
 
@@ -94,6 +104,7 @@ func rotate_sprite() -> void:
 	elif input_vector.x < 0:		
 		sprite.flip_h = true			
 	
+
 func attack() -> void:
 	if is_attacking:
 		return
@@ -105,6 +116,7 @@ func attack() -> void:
 	
 	#marcar ataque
 	is_attacking = true	
+
 
 	
 func deal_damage_to_enemies() -> void:
@@ -130,6 +142,52 @@ func deal_damage_to_enemies() -> void:
 	#print(\"Enemies\", enemies.size())
 	#pass			
 			#
+
+func update_hitbox_detection(delta: float)-> void:
+	#tempo para não receber dano
+	hitbox_cooldown -=delta
+	if hitbox_cooldown > 0: return
+	
+	#frequência(2x por segundo)
+	hitbox_cooldown = 0.5
+	
+	
+	
+	#	HitboxArea
+	var bodies = hitbox_area.get_overlapping_bodies()
+	for body in bodies:
+		if body.is_in_group(\"enemyes\"):
+			var enemy: Enemy = body
+			var damage_amount = 1
+			damage(damage_amount)
+			
+			
+	pass
+
+func damage(amount: int) -> void:
+	if health <=0: return
+	health -= amount
+	print(\"Player atingido\",amount, \"A vida total é\", health )
+	
+	#receber danoo
+	modulate = Color.RED
+	var tween = create_tween()
+	tween.set_ease(Tween.EASE_IN)
+	tween.set_trans(Tween.TRANS_QUINT)
+	tween.tween_property(self,\"modulate\",Color.WHITE,0.3)
+	
+	if health<= 0:
+		die()
+		
+func die() -> void:
+	if death_prefab:
+		var death_object = death_prefab.instantiate()
+		death_object.position = position
+		get_parent().add_child(death_object)
+			
+		print(\"Player Morreu\")
+		queue_free()		
+		
 "
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_oul6g"]
@@ -410,12 +468,16 @@ _data = {
 }
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_oul6g"]
-radius = 81.0062
+radius = 102.044
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rkbax"]
+radius = 39.0
 
 [node name="player" type="CharacterBody2D"]
 position = Vector2(120, 117)
 motion_mode = 1
 script = SubResource("GDScript_oul6g")
+death_prefab = ExtResource("1_rkbax")
 
 [node name="sprite" type="Sprite2D" parent="."]
 position = Vector2(-2, -28)
@@ -440,3 +502,11 @@ position = Vector2(0, -27)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sword_Area"]
 position = Vector2(4, 7)
 shape = SubResource("CircleShape2D_oul6g")
+debug_color = Color(0, 0.6, 0.701961, 0.172549)
+
+[node name="HitboxArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxArea"]
+position = Vector2(-2, -33)
+shape = SubResource("CircleShape2D_rkbax")
+debug_color = Color(0.709804, 0.137255, 0.243137, 0)

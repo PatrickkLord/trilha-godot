@@ -1,6 +1,6 @@
 extends Node
 
-@export var speed = 1
+@export var speed = 1.8
 
 
 var enemy: Enemy
