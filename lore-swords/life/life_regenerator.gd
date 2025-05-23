@@ -1,11 +1,18 @@
 extends Node2D
 
-@export var regeneration_amount: int = 20
-
-var area2D: Area2D
+@export var regeneration_amount: int = 10
 
 func _ready():
-	area2D = $Area2D.body_entered.connect()
-	
+	$Area2D.body_entered.connect(on_body_entered)
+
 func on_body_entered(body: Node2D) -> void:
-	pass
+	if body.is_in_group("player"):
+		var player: Player = body
+		player.heal(regeneration_amount)
+		 
+	
+	
+	
+	
+	
+	
