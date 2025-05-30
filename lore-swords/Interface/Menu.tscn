@@ -1,6 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://b70yx1osbrbpb"]
+[gd_scene load_steps=13 format=3 uid="uid://b70yx1osbrbpb"]
 
 [ext_resource type="Texture2D" uid="uid://bx80ofpuodyhs" path="res://addons/Tiny Swords/UI/Bg_TinySword_Teste.png" id="1_v3gwa"]
+[ext_resource type="Script" uid="uid://ddtia0mwgjr4r" path="res://Interface/menu.gd" id="1_wov63"]
 [ext_resource type="Texture2D" uid="uid://b4dpvwf32wtlo" path="res://addons/Tiny Swords/UI/logo_TinySword_Teste.png" id="2_wov63"]
 [ext_resource type="Theme" uid="uid://dys8yjo43h340" path="res://Interface/button.tres" id="3_8oobh"]
 [ext_resource type="Texture2D" uid="uid://c4jrqj3mppc31" path="res://addons/Tiny Swords/Factions/Knights/Troops/Warrior/Purple/Warrior_Purple.png" id="4_6fec2"]
@@ -62,6 +63,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_wov63")
 
 [node name="BG" type="TextureRect" parent="."]
 layout_mode = 0
@@ -139,3 +141,6 @@ sprite_frames = SubResource("SpriteFrames_rgio2")
 autoplay = "default"
 frame_progress = 0.11601
 flip_h = true
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Star" to="." method="_on_star_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/quit_game" to="." method="_on_quit_game_pressed"]
