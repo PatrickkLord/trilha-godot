@@ -13,6 +13,7 @@ Button/colors/font_color = Color(0.94902, 0.87451, 0.180392, 1)
 Button/colors/font_focus_color = Color(0.94902, 0.94902, 0.109804, 1)
 Button/colors/font_hover_color = Color(0.809046, 0.378918, 0.125808, 1)
 Button/colors/font_pressed_color = Color(0.767919, 0.205849, 0.15152, 1)
+Button/icons/icon = null
 Button/styles/focus = SubResource("StyleBoxEmpty_kalpf")
 Button/styles/hover = SubResource("StyleBoxEmpty_8pkd1")
 Button/styles/normal = SubResource("StyleBoxEmpty_tfmtw")

@@ -1,7 +1,8 @@
-[gd_scene load_steps=16 format=3 uid="uid://duy0wsbhojx6o"]
+[gd_scene load_steps=17 format=3 uid="uid://duy0wsbhojx6o"]
 
 [ext_resource type="PackedScene" uid="uid://n81x6vlpyroj" path="res://player/player.tscn" id="1_0e48y"]
 [ext_resource type="Texture2D" uid="uid://cuem03jxxetu1" path="res://addons/Tiny Swords/Terrain/Water/Water.png" id="1_kdubu"]
+[ext_resource type="PackedScene" uid="uid://cy6h3gdxshe3q" path="res://Interface/pause_menu.tscn" id="1_x0ka3"]
 [ext_resource type="PackedScene" uid="uid://tq5jxap46edg" path="res://enemies/pawns.tscn" id="2_0e48y"]
 [ext_resource type="Texture2D" uid="uid://b0tjf3nk1xaow" path="res://addons/Tiny Swords/Terrain/Ground/Tilemap_Flat.png" id="2_d21ai"]
 [ext_resource type="Texture2D" uid="uid://kp07d2ioqul2" path="res://addons/Tiny Swords/Terrain/Ground/Tilemap_Elevation.png" id="2_kdubu"]
@@ -1165,6 +1166,8 @@ sources/6 = SubResource("TileSetAtlasSource_4d7sh")
 sources/7 = SubResource("TileSetAtlasSource_ir8iy")
 
 [node name="Node2D" type="Node2D"]
+
+[node name="Pause_MENU" parent="." instance=ExtResource("1_x0ka3")]
 
 [node name="bg_mar" type="Sprite2D" parent="."]
 position = Vector2(561, 308)

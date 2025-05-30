@@ -33,3 +33,6 @@ layout_mode = 2
 theme = ExtResource("2_kalpf")
 text = "QUIT GAME
 "
+
+[connection signal="pressed" from="Menu_holder/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="Menu_holder/Quit_Game" to="." method="_on_quit_game_pressed"]
