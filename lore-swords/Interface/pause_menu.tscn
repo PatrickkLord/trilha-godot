@@ -1,9 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://cy6h3gdxshe3q"]
+[gd_scene load_steps=5 format=3 uid="uid://cy6h3gdxshe3q"]
 
 [ext_resource type="Script" uid="uid://b33hna3gcmvpm" path="res://Interface/pause_menu.gd" id="1_jc1on"]
 [ext_resource type="Theme" uid="uid://1i6iqx4v2gs6" path="res://Interface/pause_menu_buton.tres" id="2_kalpf"]
 
+[sub_resource type="InputEventAction" id="InputEventAction_kalpf"]
+action = &"ui_cancel"
+
+[sub_resource type="Shortcut" id="Shortcut_8pkd1"]
+events = [SubResource("InputEventAction_kalpf")]
+
 [node name="Pause_MENU" type="CanvasLayer"]
+process_mode = 3
 script = ExtResource("1_jc1on")
 
 [node name="BG" type="ColorRect" parent="."]
@@ -25,6 +32,7 @@ grow_vertical = 2
 [node name="Resume" type="Button" parent="Menu_holder"]
 layout_mode = 2
 theme = ExtResource("2_kalpf")
+shortcut = SubResource("Shortcut_8pkd1")
 text = "RESUME
 "
 

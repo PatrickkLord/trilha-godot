@@ -1,6 +1,7 @@
-[gd_scene load_steps=17 format=3 uid="uid://duy0wsbhojx6o"]
+[gd_scene load_steps=19 format=3 uid="uid://duy0wsbhojx6o"]
 
 [ext_resource type="PackedScene" uid="uid://n81x6vlpyroj" path="res://player/player.tscn" id="1_0e48y"]
+[ext_resource type="Texture2D" uid="uid://c4jrqj3mppc31" path="res://addons/Tiny Swords/Factions/Knights/Troops/Warrior/Purple/Warrior_Purple.png" id="1_0h7mo"]
 [ext_resource type="Texture2D" uid="uid://cuem03jxxetu1" path="res://addons/Tiny Swords/Terrain/Water/Water.png" id="1_kdubu"]
 [ext_resource type="PackedScene" uid="uid://cy6h3gdxshe3q" path="res://Interface/pause_menu.tscn" id="1_x0ka3"]
 [ext_resource type="PackedScene" uid="uid://tq5jxap46edg" path="res://enemies/pawns.tscn" id="2_0e48y"]
@@ -12,6 +13,16 @@
 [ext_resource type="PackedScene" uid="uid://dv1n2qqgiwqya" path="res://misc/rock.tscn" id="7_d21ai"]
 [ext_resource type="PackedScene" uid="uid://ddpp1x5oab8es" path="res://misc/water.tscn" id="10_hqns4"]
 [ext_resource type="PackedScene" uid="uid://cp6g1tn8arh5f" path="res://misc/arvore.tscn" id="11_x0ka3"]
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_nr8wp"]
+frames = 7
+frame_0/texture = ExtResource("1_0h7mo")
+frame_1/duration = 1.0
+frame_2/duration = 1.0
+frame_3/duration = 1.0
+frame_4/duration = 1.0
+frame_5/duration = 1.0
+frame_6/duration = 1.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rj586"]
 texture = ExtResource("2_d21ai")
@@ -1166,6 +1177,26 @@ sources/6 = SubResource("TileSetAtlasSource_4d7sh")
 sources/7 = SubResource("TileSetAtlasSource_ir8iy")
 
 [node name="Node2D" type="Node2D"]
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="HUD"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Icones" type="HBoxContainer" parent="HUD/Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="icone_personagem" type="TextureRect" parent="HUD/Control/Icones"]
+layout_mode = 2
+texture = SubResource("AnimatedTexture_nr8wp")
+
+[node name="vidas_personagem" type="Label" parent="HUD/Control/Icones"]
+layout_mode = 2
 
 [node name="Pause_MENU" parent="." instance=ExtResource("1_x0ka3")]
 
