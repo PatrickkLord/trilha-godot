@@ -313,7 +313,7 @@ libraries = {
 position = Vector2(0, -27)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SwordArea"]
-position = Vector2(4, 7)
+position = Vector2(-3, 2)
 shape = SubResource("CircleShape2D_oul6g")
 debug_color = Color(0.643137, 0.521569, 0.164706, 0)
 
@@ -326,4 +326,4 @@ shape = SubResource("CircleShape2D_rkbax")
 debug_color = Color(0.960784, 0.12549, 0.396078, 0)
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(161, 36)
+position = Vector2(166, 15)
