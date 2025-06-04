@@ -1,16 +1,15 @@
-[gd_scene load_steps=34 format=3 uid="uid://duy0wsbhojx6o"]
+[gd_scene load_steps=33 format=3 uid="uid://duy0wsbhojx6o"]
 
 [ext_resource type="PackedScene" uid="uid://n81x6vlpyroj" path="res://player/player.tscn" id="1_0e48y"]
 [ext_resource type="Texture2D" uid="uid://c4jrqj3mppc31" path="res://addons/Tiny Swords/Factions/Knights/Troops/Warrior/Purple/Warrior_Purple.png" id="1_0h7mo"]
 [ext_resource type="Texture2D" uid="uid://cuem03jxxetu1" path="res://addons/Tiny Swords/Terrain/Water/Water.png" id="1_kdubu"]
 [ext_resource type="Texture2D" uid="uid://co1dt0dkbiaiu" path="res://addons/Tiny Swords/Resources/Resources/M_Spawn.png" id="1_nr8wp"]
+[ext_resource type="Script" uid="uid://dg82ion5bndke" path="res://control.gd" id="1_ta5nu"]
 [ext_resource type="PackedScene" uid="uid://cy6h3gdxshe3q" path="res://Interface/pause_menu.tscn" id="1_x0ka3"]
-[ext_resource type="PackedScene" uid="uid://tq5jxap46edg" path="res://enemies/pawns.tscn" id="2_0e48y"]
 [ext_resource type="Texture2D" uid="uid://b0tjf3nk1xaow" path="res://addons/Tiny Swords/Terrain/Ground/Tilemap_Flat.png" id="2_d21ai"]
 [ext_resource type="Texture2D" uid="uid://kp07d2ioqul2" path="res://addons/Tiny Swords/Terrain/Ground/Tilemap_Elevation.png" id="2_kdubu"]
 [ext_resource type="FontFile" uid="uid://beve1ypl05kaj" path="res://UI/Minecraft.ttf" id="2_nr8wp"]
 [ext_resource type="PackedScene" uid="uid://btrnxha8bll0t" path="res://enemies/sheep.tscn" id="3_epypp"]
-[ext_resource type="PackedScene" uid="uid://0m7f2jmoq0xe" path="res://enemies/goblin.tscn" id="4_0hol4"]
 [ext_resource type="Texture2D" uid="uid://c0o68sdt2d20h" path="res://addons/Tiny Swords/Terrain/Ground/Shadows.png" id="4_rj586"]
 [ext_resource type="PackedScene" uid="uid://dv1n2qqgiwqya" path="res://misc/rock.tscn" id="7_d21ai"]
 [ext_resource type="PackedScene" uid="uid://ddpp1x5oab8es" path="res://misc/water.tscn" id="10_hqns4"]
@@ -1279,6 +1278,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_ta5nu")
 
 [node name="MarginContainer" type="MarginContainer" parent="HUD/Control"]
 layout_mode = 1
@@ -1333,7 +1333,7 @@ scale = Vector2(0.477613, 0.459703)
 sprite_frames = SubResource("SpriteFrames_1fr6y")
 autoplay = "default"
 
-[node name="separador_carne" type="Label" parent="HUD/Control/MarginContainer/Vidas"]
+[node name="separador_PLAYER" type="Label" parent="HUD/Control/MarginContainer/Vidas"]
 custom_minimum_size = Vector2(50, 20)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -1344,7 +1344,7 @@ text = "X"
 horizontal_alignment = 2
 vertical_alignment = 1
 
-[node name="contador_carner" type="Label" parent="HUD/Control/MarginContainer/Vidas"]
+[node name="contador_vida" type="Label" parent="HUD/Control/MarginContainer/Vidas"]
 custom_minimum_size = Vector2(50, 10)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_nr8wp")
@@ -1398,15 +1398,6 @@ layer_2/tile_data = PackedInt32Array(65536, 0, 0, 65537, 65536, 0, 65538, 131072
 [node name="player" parent="." instance=ExtResource("1_0e48y")]
 position = Vector2(143, 108)
 
-[node name="Pawns3" parent="." instance=ExtResource("2_0e48y")]
-position = Vector2(1058, 187)
-
-[node name="Pawns" parent="." instance=ExtResource("2_0e48y")]
-position = Vector2(1044, 303)
-
-[node name="Pawns2" parent="." instance=ExtResource("2_0e48y")]
-position = Vector2(1071, 403)
-
 [node name="Sheep" parent="." instance=ExtResource("3_epypp")]
 position = Vector2(981, 512)
 
@@ -1415,9 +1406,6 @@ position = Vector2(925, 425)
 
 [node name="Sheep3" parent="." instance=ExtResource("3_epypp")]
 position = Vector2(897, 298)
-
-[node name="Pawns4" parent="." instance=ExtResource("4_0hol4")]
-position = Vector2(861, 537)
 
 [node name="Rock" parent="." instance=ExtResource("7_d21ai")]
 position = Vector2(35, 606)

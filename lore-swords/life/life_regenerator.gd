@@ -1,5 +1,7 @@
 extends Node2D
 
+var carne = 1
+
 @export var regeneration_amount: int = 10
 
 func _ready():
@@ -16,3 +18,8 @@ func on_body_entered(body: Node2D) -> void:
 	
 	
 	
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	Global.carne +=carne
+	queue_free()
