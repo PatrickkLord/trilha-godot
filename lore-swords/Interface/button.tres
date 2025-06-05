@@ -1,4 +1,6 @@
-[gd_resource type="Theme" load_steps=4 format=3 uid="uid://dys8yjo43h340"]
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://dys8yjo43h340"]
+
+[ext_resource type="FontFile" uid="uid://beve1ypl05kaj" path="res://UI/Minecraft.ttf" id="1_7fod5"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tnt0s"]
 bg_color = Color(0.720272, 0.154989, 0.182779, 1)
@@ -12,6 +14,7 @@ border_width_bottom = 2
 border_color = Color(0.778491, 0.382123, 5.77569e-07, 1)
 
 [resource]
+Button/fonts/font = ExtResource("1_7fod5")
 Button/styles/focus = SubResource("StyleBoxFlat_tnt0s")
 Button/styles/hover = SubResource("StyleBoxFlat_7ljt0")
 Button/styles/normal = SubResource("StyleBoxFlat_iiqm2")
