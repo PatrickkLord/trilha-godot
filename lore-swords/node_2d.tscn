@@ -1378,6 +1378,9 @@ text = "00:00"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="clock_Timer" type="Timer" parent="HUD/Control"]
+autostart = true
+
 [node name="Pause_MENU" parent="." instance=ExtResource("1_x0ka3")]
 
 [node name="bg_mar" type="Sprite2D" parent="."]
@@ -1427,3 +1430,5 @@ position = Vector2(983, 75)
 
 [node name="arvore" parent="arvore3" instance=ExtResource("11_x0ka3")]
 position = Vector2(-653, 33)
+
+[connection signal="timeout" from="HUD/Control/clock_Timer" to="HUD/Control" method="_on_clock_timer_timeout"]
