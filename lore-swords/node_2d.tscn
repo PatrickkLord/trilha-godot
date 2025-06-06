@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://duy0wsbhojx6o"]
+[gd_scene load_steps=34 format=3 uid="uid://duy0wsbhojx6o"]
 
 [ext_resource type="PackedScene" uid="uid://n81x6vlpyroj" path="res://player/player.tscn" id="1_0e48y"]
 [ext_resource type="Texture2D" uid="uid://c4jrqj3mppc31" path="res://addons/Tiny Swords/Factions/Knights/Troops/Warrior/Purple/Warrior_Purple.png" id="1_0h7mo"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://dv1n2qqgiwqya" path="res://misc/rock.tscn" id="7_d21ai"]
 [ext_resource type="PackedScene" uid="uid://ddpp1x5oab8es" path="res://misc/water.tscn" id="10_hqns4"]
 [ext_resource type="PackedScene" uid="uid://cp6g1tn8arh5f" path="res://misc/arvore.tscn" id="11_x0ka3"]
+[ext_resource type="AudioStream" uid="uid://do6drq36dq2w1" path="res://music_efx/gb_fundo_efx.mp3" id="15_d2bti"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d2bti"]
 atlas = ExtResource("1_nr8wp")
@@ -1430,5 +1431,10 @@ position = Vector2(983, 75)
 
 [node name="arvore" parent="arvore3" instance=ExtResource("11_x0ka3")]
 position = Vector2(-653, 33)
+
+[node name="bg_music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("15_d2bti")
+autoplay = true
+parameters/looping = true
 
 [connection signal="timeout" from="HUD/Control/clock_Timer" to="HUD/Control" method="_on_clock_timer_timeout"]
